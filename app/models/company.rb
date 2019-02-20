@@ -1,3 +1,3 @@
 class Company < ApplicationRecord
-  # has_many :jobs, :foreign_key => 'id'
+  has_many :jobs
 end

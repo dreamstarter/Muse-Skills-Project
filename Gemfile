@@ -26,6 +26,8 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 # Use the popper gem for the dependency of Bootstrap
 gem 'popper_js', '~> 1.12.9'
+# Use kaminari gem for pagination
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

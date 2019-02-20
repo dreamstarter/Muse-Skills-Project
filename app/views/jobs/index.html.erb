@@ -7,5 +7,8 @@
 
 <% @jobs.each do |job| %>
   <h2><%= link_to job.title, job %></h2>
-  <p><%= job.company_id %></p>
+  <h6><%= job.category.name %></h6>
+  <p><%= job.company.name %></p>
 <% end %>
+
+<p><%= paginate @jobs %></p>
