@@ -1,4 +1,4 @@
-class Career
+class Api
   require 'certified'
 
   include HTTParty

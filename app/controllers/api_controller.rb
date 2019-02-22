@@ -1,7 +1,7 @@
-class CareersController < ApplicationController
+class ApiController < ApplicationController
 
   def index
-    @postings = Career.new.postings
+    @postings = Api.new.postings
     # iterate through each result/job of the muse api
     @postings["results"].each do |post, index|
       @jobs = Job.new do |key|

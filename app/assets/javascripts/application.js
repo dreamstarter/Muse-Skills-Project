@@ -17,4 +17,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require particles.js
+//= require dataTables/jquery.dataTables
 //= require_tree .

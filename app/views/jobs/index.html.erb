@@ -1,14 +1,47 @@
-<h1>Job#index</h1>
-<p>Find me in app/views/job/index.html.erb</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Job Listing</h4>
+        <p class="card-category"> Here is a subtitle for this table</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table" id="jobTable">
+            <thead class="text-primary">
+              <tr>
+                <th>Company</th>
+                <th>Category</th>
+                <th id="title_search">Title</th>  
+                <th>Level</th>
+                <th>Location</th>
+                <th>Description</th>              
+              </tr>
+            </thead>
+            <tbody>
+              <% @jobs.each do |job| %>
+                <tr>
+                  <td><%= link_to job.company.name, job %></td>
+                  <td><%= job.category.name %></td>
+                  <td><%= job.title %></td>
+                  <td><%= job.level.name %></td>
+                  <td><%= job.location.name %></td>
+                  <td><%= truncate(strip_tags(job.description), :length => 100) %></td>                  
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% Category.all.each do |category| %>
-  <%= link_to category.name, jobs_path(category: category.name) %>
-<% end %>
-
-<% @jobs.each do |job| %>
-  <h2><%= link_to job.title, job %></h2>
-  <h6><%= job.category.name %></h6>
-  <p><%= job.company.name %></p>
-<% end %>
-
-<p><%= paginate @jobs %></p>
+<script>
+// initialize jquery datatable and set all columns to no searchable except the job title column
+  var table = $('#jobTable').DataTable( {
+    "columnDefs": [
+      { "targets": [0,1,3,4,5], "searchable": false }
+    ]
+  });
+</script>

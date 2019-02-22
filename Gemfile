@@ -26,16 +26,17 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 # Use the popper gem for the dependency of Bootstrap
 gem 'popper_js', '~> 1.12.9'
-# Use kaminari gem for pagination
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
-
+# use the ptthparty for easy api interactions
 gem 'httparty'
+# Use the certifed gem to help openssl work on windows
 gem 'certified'
-
+# Use dtabase cleaner to truncate the entire database on-demand
 gem 'database_cleaner'
-
+# Use jquery DataTables to make filterable and searchable tables
+gem 'jquery-datatables-rails'
 # 
 gem 'particles-js-rails', '~> 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
