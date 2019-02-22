@@ -1,0 +1,13 @@
+<div class="card-body">
+  <div class="card-title">Filter Jobs</div>
+  <div class="card-body">
+    <%= bootstrap_form_tag url: '/jobs', method: 'get' do %>
+      <%= select_tag "company", options_from_collection_for_select(@companies, "id", "name"), include_blank: "Company", class: "btn btn-default btn-sm dropdown-toggle company", :onchange => "this.form.submit();" %>
+      <%= select_tag "category", options_from_collection_for_select(@categories, "id", "name"), include_blank: "Category", class: "btn btn-default btn-sm dropdown-toggle category", :onchange => "this.form.submit();" %>
+      <%= select_tag "location", options_from_collection_for_select(@locations, "id", "name"), include_blank: "Location", class: "btn btn-default btn-sm dropdown-toggle location", :onchange => "this.form.submit();" %>
+      <%= select_tag "level", options_from_collection_for_select(@levels, "id", "name"), include_blank: "Level", class: "btn btn-default btn-sm dropdown-toggle level", :onchange => "this.form.submit();" %>
+      <%= submit_tag "Filter", class: "btn btn-info btn-sm" %>
+      <%= button_to "Reset", jobs_path, class: "btn btn-warning btn-sm" %>
+    <% end %>
+  </div>
+</div>
