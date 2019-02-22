@@ -1,5 +1,29 @@
 
-<% @postings["results"].each do |post| %>
-  <%= post.inspect %>
-  <hr>
-<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h2 class="card-title">API Data</h2>
+        <p class="card-category">Retrieval and Storage</p>
+      </div>
+      <div class="card-body">
+        <h6 class="card-category text-gray">The Muse - Skills Test</h6>
+        <h4 class="card-title">Bryan Anderson</h4>
+        <p class="card-description">
+          Each time this page is excuted, the following happens:
+          <ul class="card-description">
+            <li>The application pulls a random page from the public API.</li>
+            <li>The API data is then validated for a 200 response.</li>
+            <li>The application iterates over the API results and stores the data elements into the appropriate models.</li>
+          </ul>
+        </p>
+        <p class="card-description">
+          Executing this page will add to the existing data already stored.
+          <ul class="card-description">
+            <li>To start over, simple run <code>rails db:seed</code> in console to truncate the local database.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

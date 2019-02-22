@@ -13,65 +13,51 @@
 
 <body>
   <div class="wrapper ">
-    <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
+    <div class="sidebar" data-color="danger" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo">
         <%= link_to 'Muse Project', root_path, class: 'simple-text logo-normal'%>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="nav-item <%= active_class(root_path) %>">
             <%= link_to root_path, class: 'nav-link' do %>
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             <% end %>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item <%= active_class(jobs_path) %>">
             <%= link_to jobs_path, class: 'nav-link' do %>
               <i class="material-icons">work</i>
               <p>Jobs</p>
+            <% end %>
+          </li>
+          <li class="nav-item <%= active_class(api_index_path) %>">
+            <%= link_to api_index_path, class: 'nav-link' do %>
+              <i class="material-icons">data_usage</i>
+              <p>API</p>
             <% end %>
           </li> 
         </ul>
       </div>
     </div>
     <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#">Dashboard</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-        <div class="content">
-          <div id="particles-js">
-            <div class="container-fluid">
-              <%= yield %>
-            </div>
-          </div>
-        </div>
-        <footer class="footer">
+      <div class="content">
+        <div id="particles-js">
           <div class="container-fluid">
-            <div class="copyright float-right">
-              developed with <i class="material-icons">favorite</i> by
-              <a href="https://github.com/dreamstarter" target="_blank">Bryan Anderson</a> for a better web.
-            </div>
-            <!-- your footer here -->
+            <%= yield %>
           </div>
-        </footer>
+        </div>
       </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="copyright float-right">
+            developed with <i class="material-icons">favorite</i> by
+            <a href="https://github.com/dreamstarter" target="_blank">Bryan Anderson</a> for a better web.
+          </div>
+          <!-- your footer here -->
+        </div>
+      </footer>
     </div>
+  </div>
   </body>
 </html>

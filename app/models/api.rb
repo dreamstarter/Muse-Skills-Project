@@ -12,7 +12,7 @@ class Api
       query: {
         key: api_key,
         desc: "false",
-        page: 10
+        page: rand(1..20)
       }
     }
   end

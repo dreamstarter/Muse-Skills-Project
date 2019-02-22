@@ -1,4 +1,44 @@
-<h1><%= @job.title %></h1>
-<h6><%= @job.category.name %></h6>
-<p><%= @job.description %></p>
-<p><%= @job.company.name %></p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title"><%= @job.title %></h4>
+        <p class="card-category"><%= @job.company.name %></p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-5">
+            <label class="bmd-label-floating">Category:</label>
+            <% if @job.category.name? %>
+              <%= @job.category.name %>
+            <% else %>
+              N/A
+            <% end %>
+          </div>          
+          <div class="col-md-3">
+            <label class="bmd-label-floating">Level:</label>
+            <% if @job.level.name? %>
+              <%= @job.level.name %>
+            <% else %>
+              N/A
+            <% end %>
+          </div>
+          <div class="col-md-4">
+            <label class="bmd-label-floating">Location:</label>
+            <% if @job.location.name? %>
+              <%= @job.location.name %>
+            <% else %>
+              N/A
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p><%= @job.description.html_safe %></p>
+          </div>            
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
