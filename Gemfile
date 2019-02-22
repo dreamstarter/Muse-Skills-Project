@@ -32,6 +32,8 @@ gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'httparty'
 gem 'certified'
 
+gem 'database_cleaner'
+
 # 
 gem 'particles-js-rails', '~> 2.0'
 group :development, :test do

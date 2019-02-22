@@ -1,19 +1,18 @@
 class Career
   require 'certified'
-  
+
   include HTTParty
   base_uri 'www.themuse.com/api/public'
 
   attr_reader :options
   
   def initialize
-    api_key = ''
+    api_key = '212387a11a87325b6364eed2b5b489146fb2e78d401db3180751703fd1824fdf'
     @options = {
       query: {
         key: api_key,
-        sign: "true",
-        desc: "true",
-        page: 1
+        desc: "false",
+        page: 10
       }
     }
   end

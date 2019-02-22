@@ -1,2 +1,6 @@
 <h1>Career#index</h1>
 <p>Find me in app/views/career/index.html.erb</p>
+<% @postings["results"].each do |post| %>
+  <%= post.inspect %>
+  <hr>
+<% end %>
