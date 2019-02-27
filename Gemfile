@@ -13,7 +13,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use Bootstrap 4 for the UI
-gem "bootstrap", ">= 4.1.2"
+gem "bootstrap", "~> 4.3.1"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster.
@@ -25,7 +25,7 @@ gem 'jquery-rails'
 # Bootstrap theme uses font-awesome icons
 gem 'font-awesome-rails'
 # Use the popper gem for the dependency of Bootstrap
-gem 'popper_js', '~> 1.12.9'
+gem 'popper_js', '>= 1.14.3'
 # use the ptthparty for easy api interactions
 gem 'httparty'
 # Use the certifed gem to help openssl work on windows
