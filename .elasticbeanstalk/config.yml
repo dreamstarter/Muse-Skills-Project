@@ -1,0 +1,20 @@
+branch-defaults:
+  aws-deployment:
+    environment: RailsMuseApplication-env
+environment-defaults:
+  RailsMuseApplication-env:
+    branch: null
+    repository: null
+global:
+  application_name: Rails-Muse-Application
+  default_ec2_keyname: null
+  default_platform: arn:aws:elasticbeanstalk:us-east-2::platform/Puma with Ruby 2.3
+    running on 64bit Amazon Linux/2.9.1
+  default_region: us-east-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: muse
+  sc: git
+  workspace_type: Application
